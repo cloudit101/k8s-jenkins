@@ -10,8 +10,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                container('busybox') {
-                    sh 'hostname'
+                container('maven') {
+                    sh 'java -version'
                 }
             }
         }
