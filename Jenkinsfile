@@ -1,17 +1,16 @@
 pipeline {
-   
-    agent {
+   agent {
         kubernetes {
           defaultContainer 'jnlp'
-          
-            
+          yamlFile 'build.yaml'
+ 
         }
     }
     stages {
         stage('Build') {
             steps {
-                container('jnlp') {
-                    sh 'java -version'
+                container('kubehelmjava') {
+                    sh 'kubectl get nodes'
                 }
             }
         }
