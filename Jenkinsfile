@@ -3,14 +3,14 @@ pipeline {
     agent {
         kubernetes {
           defaultContainer 'jnlp'
-          yamlFile 'build.yaml'
+          
             
         }
     }
     stages {
         stage('Build') {
             steps {
-                container('jen') {
+                container('jnlp') {
                     sh 'java -version'
                 }
             }
