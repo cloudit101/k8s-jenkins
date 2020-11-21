@@ -6,8 +6,8 @@ metadata:
     some-label: pod
 spec:
   containers:
-    - name: jen
-      image: jenkins/agent
+    - name: kubehelmjava
+      image: cloudit101/centoskubectlhelmjdk8:latest
       command:
         - cat
       tty: true
