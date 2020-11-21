@@ -3,13 +3,14 @@ pipeline {
     agent {
         kubernetes {
             defaultContainer 'jnlp'
+           yamlFile 'build.yaml'
             
         }
     }
     stages {
         stage('Build') {
             steps {
-                container('jnlp') {
+                container('busybox') {
                     sh 'hostname'
                 }
             }
